@@ -1,0 +1,23 @@
+{
+  "name": "Angular tag replacement directive",
+  "version": "0.0.1",
+  "authors": [
+    "minutephp <dev@minutephp.com>"
+  ],
+  "description": "Simple AngularJS plugin to replace %tags% using directive",
+  "main": "src/js/angular-tags.js",
+  "keywords": [
+    "angularjs",
+    "tags",
+    "replacement"
+  ],
+  "license": "MIT",
+  "homepage": "http://www.minutephp.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
