@@ -1,7 +1,6 @@
 {
-  "name": "Angular tag replacement directive",
-  "version": "v1.5.6",
-  "authors": [
+  "name": "angular-tags",
+    "authors": [
     "minutephp <dev@minutephp.com>"
   ],
   "description": "Simple AngularJS plugin to replace %tags% using directive",
