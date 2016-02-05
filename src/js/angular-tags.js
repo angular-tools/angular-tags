@@ -4,10 +4,16 @@
             var serviceInstance = {};
 
             serviceInstance.replaceTags = function (text, replacements) {
+                var replace = function (tag, hash) {
+                    var parts = (tag || '').split('|');
+                    return (hash[parts[0]] || parts[1]) || '';
+                };
+
                 var obj = typeof($session) !== 'undefined' ? angular.extend({}, $session.site, $session.user, $session.request, replacements) : replacements || {};
-                var html = text.replace(/\%(.+?)\%/g, function (match, contents, offset, s) {
-                    return obj.hasOwnProperty(contents) ? obj[contents] : '';
-                });
+                var html = (text || '')
+                    .replace(/%([\w\-\|]+)%/g, function (all, key) { return replace(key, replacements);})
+                    .replace(/%(\w+)\.([\w\-\|]+)%/g, function (all, key1, key2) {return replace(key2, replacements[key1]);});
+
 
                 return html;
             };
